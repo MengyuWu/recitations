@@ -16,7 +16,17 @@ int globalvar = 0;
 
 int main(int argc, char **argv) {
     printf("We'll be running a series of experiments, and printing the results\n"
-            "to try to better understand pointers and memory in C. Ready?\n\n");
+            "to try to better understand pointers and memory in C. \n"
+            "It may be useful to give some arbitrary command line arguments.\nReady?\n\n");
+
+    printf("The memory address of argc is %p\n", &argc);
+    printf("The memory address of argv is %p\n", &argv);
+    int i;
+    for (i = 0; i < argc; i++) {
+        printf("The memory address of argv[%d] (%s) is %p\n", i, argv[i], argv[i]);
+    }
+    printf("\n");
+
 
     static double staticvar = 0.0;
     printf("The memory address of global variable globalvar is %p\n", &globalvar);
@@ -40,8 +50,8 @@ int main(int argc, char **argv) {
         &ptr_to_ptr_to_a, ptr_to_ptr_to_a, *ptr_to_ptr_to_a, **ptr_to_ptr_to_a);
 
 
-    printf("Mallocing *c to sizeof(int)*5; *d to sizeof(int)\n");
-    int *c = malloc(sizeof(int)*5);
+    printf("Mallocing *c to sizeof(int)*5000; *d to sizeof(int)\n");
+    int *c = malloc(sizeof(int)*5000);
     int *d = malloc(sizeof(int));
 
     *c = 9;
@@ -57,7 +67,6 @@ int main(int argc, char **argv) {
     3[c] = 12;
     *(c+4) = 0;
     printf("Now looping through c+0...c+4:\n");
-    int i;
     for (i = 0; i < 5; i++) {
         printf("    *(c+%d) == %2d", i, *(c+i));
         printf("    c[%d] == %2d", i, c[i]);
@@ -65,7 +74,7 @@ int main(int argc, char **argv) {
     }
     printf("\n");
 
-    printf("one last thing, carr is an int array of size 5. Let's do what we did with c again with carr...\n");
+    printf("one last thing, carr can be seen as an int array of size 5 (really 5000, but who's counting). Let's do what we did with c again with carr...\n");
     int carr[5];
     carr[0] = 9;
     *(carr+1) = 10;
@@ -102,7 +111,8 @@ int main(int argc, char **argv) {
     printf("\n");
 
 
-    printf("Now let's play with functions!\n");
+    printf("Now let's play with string literals and functions!\n");
+    printf("The memory address of the string literal \"hi\" is %p\n", &"hi");
     printf("The memory address of the function add is %p\n", &add);
     printf("The memory address of the function multiply is %p\n", &multiply);
     printf("\n");
