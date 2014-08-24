@@ -1,4 +1,5 @@
-# Recitation 5 #
+# Recitation F #
+
 The main topics for these notes will be those useful for lab 3, material from
 lecture note 9, and useful information for the practice midterm.
 
@@ -123,119 +124,6 @@ Why? Because referencing a pointer to a function just gets you the same
 pointer back. It has no effect. Too bad. Boring.
 
 
-## Makefiles ##
-
-Makefiles aren't as hard as they look so long as you understand the three steps
-to compilation. [(Source
-here)](http://stackoverflow.com/questions/6264249/how-does-the-compilation-linking-process-work)
-
-1. Pre-processing: This is when special isntructions like `#include` are
-processed.
-2. Compilation: This is when your c code is processed into an object file in
-binary form. At this point, undefined symbols are okay so long as they're
-declared. That's why you `#include` header files - to declare functions and
-variables that you don't define in that particular file. `gcc` lets you stop the
-entire process at this point using the `-c` flag. Object files generated in this
-step can be linked together to form an executable or put in a special archive
-called a static library. Most error checking takes place at this stage.
-3. Linking: The linker takes object files with binary symbols and produces
-either a shared (AKA dynamic) library, or an executable. At this point it
-replaces all the references to undefined symbols with the proper memory address.
-Most often at this stage the only errors left come from double-defined symbols
-or undefined symbols.
-
-Now let's take a look at the Makefile's default rules and variables:
-
-Compilation (includes pre-processing):
-```make
-n.o:
-  $(CC) -c $(CPPFLAGS) $(CFLAGS) n.c
-```
-Linking:
-```make
-n:
-  $(CC) $(LDFLAGS) n.o $(LOADLIBES) $(LDLIBS)
-```
-
-Let's take a look at some of the variable definitions we've used in the past:
-
-```make
-CC  = gcc
-INCLUDES =
-CFLAGS   = -g -Wall $(INCLUDES)
-LDFLAGS = -g
-LDLIBS =
-```
-
-And here are some entries from running `man gcc`:
-
-```
-gcc [-c|-S|-E] [-std=standard]
-           [-g] [-pg] [-Olevel]
-           [-Wwarn...] [-pedantic]
-           [-Idir...] [-Ldir...]
-           [-Dmacro[=defn]...] [-Umacro]
-           [-foption...] [-mmachine-option...]
-           [-o outfile] [@file] infile...
--g  
-           Produce debugging information in the operating system's native format (stabs, COFF, XCOFF, or DWARF 2).
-           GDB can work with this debugging information.
-
-           On most systems that use stabs format, -g enables use of extra debugging information that only GDB can
-           use; this extra information makes debugging work better in GDB but will probably make other debuggers
-           crash or refuse to read the program.
-
--Wall
-           Turns on all optional warnings which are desirable for normal code.  At present this is -Wcomment,
-           -Wtrigraphs, -Wmultichar and a warning about integer promotion causing a change of sign in "#if"
-           expressions.  Note that many of the preprocessor's warnings are on by default and have no options to
-           control them.
-
--I dir
-           Add the directory dir to the list of directories to be searched for header files.  Directories named by -I
-           are searched before the standard system include directories.  If the directory dir is a standard system
-           include directory, the option is ignored to ensure that the default search order for system directories
-           and the special treatment of system headers are not defeated .  If dir begins with "=", then the "=" will
-           be replaced by the sysroot prefix; see --sysroot and -isysroot.
-
--Ldir
-           Add directory dir to the list of directories to be searched for -l.
-
--llibrary
--l library
-           Search the library named library when linking.
-```
-
-Given what we know about compilation, where might we want to use these flags and
-for what purposes? The order we use these flags and the variables we insert them
-in is **very** important.
-
-## Important Things to Review ##
-
-- Arrays, pointers, and the structure of argv. Understanding how these data
-  types and structures work will be crucial to your understanding of C as this
-  class progresses. Try practice problem 1 for an understanding of this.
-- Order of operations. This stuff will make the exam much easier if you're not
-  trying to figure out whether the increment or the dereference happens first
-  when there are no parentheses.
-- Structs and Unions. You've already had to use structs on numerous occassions.
-  Though unions weren't on any labs, but are definitely in the lecture notes and
-  therefore fair game.
-- Stack and Heap allocation. Make sure you know how to use malloc and free. Try
-  to determine if there are memory leaks in some sample code. 
-- libmylist.a. Make sure you understand how the linked list is supposed to
-  function
-- Makefiles and git. These questions are always fair game as well. You've been
-  using makefiles and git long enough that you should know what tracked,
-  untracked, staged, and modified mean in the context of git. You should also
-  know about what rules are implicit to make, and how to write a makefile with pen
-  and paper.
-
-Try to work on pen and paper as much as possible leading up to the midterm.
-Compile-and-check methods aren't going to get you far when you're sitting down
-to take the test, so don't use them to practice. Try to really understand what
-you're writing so that you can be confident it works on your own without the
-compiler checking it for you.
 
 ## File I/O ##
 ### 3 channels ###

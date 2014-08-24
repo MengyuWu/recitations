@@ -21,20 +21,22 @@ Contents:
     * See also the very useful [E-code](E-code/) directory,
       especially `pointerfun.c` and its output `pointerfun-output` for some
       interesting experiments with pointers and memory addresses.
-* [Recitation F](F-function-pointers.md): Function pointers. Taking Makefiles
-  to the next level. Basic File input/output.
-* [Recitation G](G-gdb.md) Using GDB and valgrind for debugging.
-* [Recitation H](H-unix-fork-exec.md): The UNIX stack. Users, permissions, file
-  attributes. Processes, forking, and signals.
-    * See also `jsh`, the Jae shell, in the [H-code](H-code/)
+* [Recitation F](F-function-pointers.md): Function pointers. Basic File input/output.
+* [Recitation G](G-structs-unions.md): Strucuts, Unions, Const, C strings.
+* [Recitation H](H-linked-lists.md): Linked Lists and similar data structures.
+* [Recitation I](I-debugging.md) Using GDB and valgrind for debugging.
+* [Recitation J](J-unix-fork-exec.md): The UNIX stack. Users, permissions, file
+  attributes. Processes, forking, and signals. TCP/IP and netcat basics.
+    * See also `jsh`, the Jae shell, in the [J-code](J-code/)
       directory for a fun example of forking.
-* [Recitation I](I-io.md): `size_t`. File IO, including reading, writing,
+* [Recitation K](K-io.md): `size_t`. File IO, including reading, writing,
   and seeking in files.
-* [Recitation J](J-cpp.md): C++. Classes/Structs. Stack vs heap allocation
+* [Recitation L](L-tcpip.md): TCP/IP stack information. 
+* [Recitation M](M-cpp.md): C++. Classes/Structs. Stack vs heap allocation
   in C++. The basic 4. Implicit conversion and operator overloading.
-* [Recitation K](K-templates-containers.md): C++ generics, templates,
+* [Recitation N](N-templates-containers.md): C++ generics, templates,
   containers, metaprogramming
-* [Recitation L](L-smart-pointer.md): Smart Pointer
+* [Recitation O](O-smart-pointer.md): Smart Pointer
 
 Additionally you can read the [Midterm Review](midterm-review.md) to prepare
 for the midterm.
