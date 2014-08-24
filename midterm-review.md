@@ -1,8 +1,37 @@
-# Recitation 8 - Midterm Review #
+# Midterm Review #
+
+
+## Important Things to Review ##
+
+- Arrays, pointers, and the structure of argv. Understanding how these data
+  types and structures work will be crucial to your understanding of C as this
+  class progresses. Try practice problem 1 for an understanding of this.
+- Order of operations. This stuff will make the exam much easier if you're not
+  trying to figure out whether the increment or the dereference happens first
+  when there are no parentheses.
+- Structs and Unions. You've already had to use structs on numerous occassions.
+  Though unions weren't on any labs, but are definitely in the lecture notes and
+  therefore fair game.
+- Stack and Heap allocation. Make sure you know how to use malloc and free. Try
+  to determine if there are memory leaks in some sample code. 
+- libmylist.a. Make sure you understand how the linked list is supposed to
+  function
+- Makefiles and git. These questions are always fair game as well. You've been
+  using makefiles and git long enough that you should know what tracked,
+  untracked, staged, and modified mean in the context of git. You should also
+  know about what rules are implicit to make, and how to write a makefile with pen
+  and paper.
+
+Try to work on pen and paper as much as possible leading up to the midterm.
+Compile-and-check methods aren't going to get you far when you're sitting down
+to take the test, so don't use them to practice. Try to really understand what
+you're writing so that you can be confident it works on your own without the
+compiler checking it for you.
+
 
 ## Signed and Unsigned Integers ##
 
-From [Recitation 3](recitation-3.md):
+From [Recitation D](D-binary-c-basics.md):
 
 ### Bits Bytes and Binary ###
 
@@ -126,7 +155,7 @@ make up a string, but more on this later.
 
 ## Bitwise Operators ##
 
-Also from [Recitation 3](recitation-3.md):
+Also from [Recitation D](D-binary-c-basics.md):
 
 Bit-wise operators are tricky and can be used for a variety of purposes:
 
@@ -228,7 +257,7 @@ Make sure you know what levels of git tracking exist:
 
 Also know how dependencies work in Make. Jae's sample makefile is really great
 to use to understand this. I've included the relevant sections from [recitation
-2](recitation-2.md) below:
+B](B-makefiles.md) below:
 
 Take Jae's Makefile piece by piece. It can be found in this git repository as
 `sample-makefile`
@@ -348,7 +377,7 @@ all: clean main
 
 ## Function Pointers ##
 
-From [Recitation 5](recitation-5.md):
+From [Recitation F](F-function-pointers.md):
 
 It is often the case in programming that you'll want your program to change its
 behavior for the person using your program but have no idea how they may want to
@@ -488,7 +517,7 @@ int a;
 int b = a * 4; // uninitialized read of variable a 
 ```
 
-For more information, reference [Recitation 4](recitation-4.md).
+For more information, reference [Recitation E](E-memory-pointers.md).
 
 ## Good to Know Additional Topics ##
 
@@ -498,7 +527,7 @@ Just some things it might pay to know well:
   - How the functions you implemented in lab3 should work, what they return,
     etc. etc.
   - What the pipeline for lab5 looked like and how it worked
-  - The ASCII Table (See [Recitation 3](recitation-3.md))
+  - The ASCII Table (See [Recitation D](D-binary-c-basics.md))
   - malloc and free...this is tough
   - **PLEASE PLEASE PLEASE PLEASE FOLLOW DIRECTIONS** The exam will be graded
     in the same way your labs are graded if not less lenient. Read all the

@@ -1,4 +1,4 @@
-# Recitation 4 #
+# Recitation E #
 
 ## Variables ##
 
@@ -216,7 +216,7 @@ char **p = a;
 char a[][10] = {"hello", "world" }; //what's the difference here?
 ```
 
-You can find more examples of this in `recitation-4-code/ptrtoptrs.c`
+You can find more examples of this in `E-code/ptrtoptrs.c`
 
 ## Heap allocations ##
 

@@ -1,4 +1,5 @@
-# Supplementary Information for Recitation 5 #
+# Recitation F: Struct, Union, and Const #
+
 ## Structs (K&R 6) ##
 
 Structs are kind of like Java's objects but for C. Fundamentally, they allow you
@@ -96,6 +97,9 @@ struct {
     Node parent;
 } Node;
 ```
+
+
+
 ### Union ###
 
 A union is really nifty. It's like a structure, but, wait for it, all of its
@@ -140,6 +144,8 @@ some nasty little things to be aware of.
     Exponential even.
   - `memcpy` is great for cleaning things up. Just sayin'.
 
+
+
 ### Const ###
 
 `const` is a keyword for types in C that prevents them from being modified. It's
@@ -157,3 +163,6 @@ stuck[0] = 'f'; //valid, because the memory the pointer points to is mutable.
 
 const char *const why = "You'll never change anything about me. Ever";
 ```
+
+Note that const will be used heavily, and not exactly the same, when we get to
+C++. 
